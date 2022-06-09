@@ -1,7 +1,7 @@
 <template>
   <div>
-    <form @submit.prevent="searchQuery()">
-      <BaseInput v-model="query" />
+    <form @submit.prevent="searchQuery" @keyup.enter="searchQuery">
+      <BaseInput v-model="query" placeholder="Cosa vuoi guardare?" />
       <BaseButton type="submit">Cerca</BaseButton>
     </form>
   </div>
