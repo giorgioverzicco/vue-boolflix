@@ -1,5 +1,7 @@
 <template>
-  <li class="group relative h-[560px] cursor-pointer overflow-hidden rounded">
+  <li
+    class="group relative h-[560px] cursor-pointer overflow-hidden rounded shadow"
+  >
     <BasePoster
       :url="`https://image.tmdb.org/t/p/w342/${data.poster_path}`"
       class="h-full w-full rounded object-cover"
