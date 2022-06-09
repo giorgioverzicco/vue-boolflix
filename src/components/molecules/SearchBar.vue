@@ -9,6 +9,7 @@
 
 <script>
 import axios from 'axios'
+import search from '@/shared/search.js'
 
 import BaseInput from '../atoms/BaseInput.vue'
 import BaseButton from '../atoms/BaseButton.vue'
@@ -18,6 +19,7 @@ export default {
   data() {
     return {
       query: '',
+      search,
     }
   },
   methods: {
@@ -46,7 +48,7 @@ export default {
         })
         .then((response) => results.push(...response.data.results))
 
-      this.$emit('search', results)
+      this.search.results = results
     },
   },
 }
