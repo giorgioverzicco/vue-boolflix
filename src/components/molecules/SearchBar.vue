@@ -1,8 +1,18 @@
 <template>
   <div>
-    <form @submit.prevent="searchQuery" @keyup.enter="searchQuery">
-      <BaseInput v-model="query" placeholder="Cosa vuoi guardare?" />
-      <BaseButton type="submit">Cerca</BaseButton>
+    <form
+      class="rounded-full border-2 border-gray-400 bg-gray-50 py-1"
+      @submit.prevent="searchQuery"
+      @keyup.enter="searchQuery"
+    >
+      <BaseInput
+        v-model="query"
+        class="rounded-l-full bg-inherit px-3 placeholder:text-gray-500 focus:outline-none"
+        placeholder="Cosa vuoi guardare?"
+      />
+      <BaseButton class="pl-2 pr-4 text-gray-400" type="submit">
+        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+      </BaseButton>
     </form>
   </div>
 </template>

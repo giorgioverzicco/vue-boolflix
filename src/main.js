@@ -3,13 +3,13 @@ import App from './App.vue'
 import './index.css'
 
 // Font Awesome
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-// library.add(faUserSecret)
+library.add(faMagnifyingGlass)
 
-// Vue.component('FontAwesomeIcon', FontAwesomeIcon)
+Vue.component('FontAwesomeIcon', FontAwesomeIcon)
 // /Font Awesome
 
 Vue.config.productionTip = false
