@@ -32,7 +32,7 @@ export default {
         title: result.title || result.name,
         original_title: result.original_title || result.original_name,
         language: this.getCountry(result.original_language),
-        vote_average: result.vote_average,
+        vote_average: Math.ceil(result.vote_average / 2),
       }
     },
 
