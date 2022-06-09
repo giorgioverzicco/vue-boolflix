@@ -22,6 +22,8 @@ export default {
   },
   methods: {
     searchQuery() {
+      const results = []
+
       axios
         .get('https://api.themoviedb.org/3/search/movie', {
           params: {
@@ -31,9 +33,20 @@ export default {
             include_adult: false,
           },
         })
-        .then((response) => {
-          this.$emit('search', response.data.results)
+        .then((response) => results.push(...response.data.results))
+
+      axios
+        .get('https://api.themoviedb.org/3/search/tv', {
+          params: {
+            api_key: '5031f648e435e991698175d09cdbf7a1',
+            query: this.query,
+            language: 'it-IT',
+            include_adult: false,
+          },
         })
+        .then((response) => results.push(...response.data.results))
+
+      this.$emit('search', results)
     },
   },
 }

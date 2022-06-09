@@ -3,10 +3,11 @@
     <SearchBar @search="results = $event" />
     <ul>
       <li v-for="result in results" :key="result.id">
-        <h1>{{ result.title }}</h1>
-        <h2>{{ result.original_title }}</h2>
-        <CountryFlag :country="getCountry(result.original_language)" />
-        <p>{{ result.vote_average }}</p>
+        <h1>{{ getData(result).title }}</h1>
+        <h2>{{ getData(result).original_title }}</h2>
+        <p>{{ result.original_language }}</p>
+        <CountryFlag :country="getData(result).language" />
+        <p>{{ getData(result).vote_average }}</p>
       </li>
     </ul>
   </header>
@@ -27,15 +28,26 @@ export default {
     }
   },
   methods: {
+    getData(result) {
+      return {
+        title: result.title || result.name,
+        original_title: result.original_title || result.original_name,
+        language: this.getCountry(result.original_language),
+        vote_average: result.vote_average,
+      }
+    },
+
     getCountry(lang) {
       return CountryLanguage.getLanguage(lang, (e, language) => {
-        const result = language.countries.at(-1).code_2.toLowerCase()
+        const result = language.countries[0].code_2.toLowerCase()
 
         switch (result) {
           case 'ag':
             return 'gb'
           case 'ar':
             return 'es'
+          case 'be':
+            return 'fr'
           default:
             return result
         }
