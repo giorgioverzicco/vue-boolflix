@@ -14,7 +14,7 @@ import BaseTitle from '../atoms/BaseTitle.vue'
 import BaseText from '../atoms/BaseText.vue'
 import BasePoster from '../atoms/BasePoster.vue'
 
-const CountryLanguage = require('country-language')
+import CountryLanguage from 'country-language'
 
 export default {
   name: 'ResultItem',
