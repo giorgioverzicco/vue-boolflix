@@ -59,6 +59,7 @@ export default {
         .then((response) => results.push(...response.data.results))
 
       this.search.results = results
+      this.search.query = this.query
     },
   },
 }
