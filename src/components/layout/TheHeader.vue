@@ -1,5 +1,7 @@
 <template>
-  <header class="flex h-[80px] items-center justify-between bg-gray-900 p-4">
+  <header
+    class="flex h-[60px] items-center justify-between bg-dark-gray-500 p-3"
+  >
     <BaseLogo />
     <SearchBar />
   </header>
